@@ -131,7 +131,7 @@ class Database:
         self.download_helper(projects, filename_format=self.conf.FORCE_FILENAME, directory=None)
 
     def download_moss(self, projects):
-        self.download_helper(projects, filename_format=self.conf.MOSS_FORMAT, directory=self.conf.MOSS_DIR)
+        self.download_helper(projects, filename_format=self.conf.MOSS_FORMAT, directory="{}/{}_ipynb".format(self.conf.MOSS_DIR, '-'.join(projects)))
 
     def download_prefix(self):
         print('Getting all s3 keys...')
